@@ -24,7 +24,7 @@ class AulasComponent extends HTMLElement {
   
       const link = document.createElement('link');
       link.rel = 'stylesheet';
-      link.href = 'style_componente.css'; 
+      link.href = 'styles_componente.css'; 
       this.shadowRoot.appendChild(link); 
   
       this.shadowRoot.innerHTML += `
@@ -48,4 +48,4 @@ class AulasComponent extends HTMLElement {
     }
   }
   
-  customElements.define('aulas-component', AulasComponent);     
+  customElements.define('aulas-component', AulasComponent);  
