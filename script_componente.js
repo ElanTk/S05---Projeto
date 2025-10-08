@@ -35,7 +35,7 @@ class AulasComponent extends HTMLElement {
             let corNota = '';
             if (a.nota < 6) {
                 corNota = '#ff0000ff';
-            } else if (a.nota == 6) {
+            } else if (a.nota > 6 && a.nota < 8) {
                 corNota = '#ffaa00ff';
             } else {
                 corNota = '#00ff00ff';

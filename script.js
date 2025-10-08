@@ -15,6 +15,15 @@ function temaLim() {
     document.documentElement.style.setProperty('--md-sys-color-primary', '#38184C');
 }
 
+function temaVerm() {
+    document.documentElement.style.setProperty('--cor-click', '#38184C');
+    document.documentElement.style.setProperty('--cor-sombra', '#9b0a59');
+    document.documentElement.style.setProperty('--cor-text', 'black');
+    document.documentElement.style.setProperty('--cor-back1', '#f09d9dff');
+    document.documentElement.style.setProperty('--cor-back2', '#934f4fff');
+    document.documentElement.style.setProperty('--md-sys-color-primary', '#1a0e22ff');
+}
+
 function temaInatel() {
     document.documentElement.style.setProperty('--cor-click', '#126ae2');
     document.documentElement.style.setProperty('--cor-sombra', '#0a599b');
