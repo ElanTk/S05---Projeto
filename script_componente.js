@@ -24,7 +24,7 @@ class AulasComponent extends HTMLElement {
   
       const link = document.createElement('link');
       link.rel = 'stylesheet';
-      link.href = 'styles_componente.css'; 
+      link.href = 'style_componente.css'; 
       this.shadowRoot.appendChild(link); 
   
       this.shadowRoot.innerHTML += `
