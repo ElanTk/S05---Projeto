@@ -141,4 +141,3 @@ carousel.addEventListener('touchend', (e) => {
 
 // Inicializando
 createCards();
-
