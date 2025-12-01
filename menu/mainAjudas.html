@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Ajudas</title>
+
+    <link rel="stylesheet" href="mainAjudas.css">
+
+</head>
+
+<body>
+    <!-- Esse daqui é o menu pra adicionar uma ajuda no mind++ e tals  -->
+    <div id="tela-menu" class="menu-overlay">
+        <div class="menu-box">
+            <h2>Inatel</h2>
+            <h3>Requisitar encontro no Mind++</h3>
+
+            <div class="menu-line">
+                <label>Data:</label>
+                <input type="date" id="inputData">
+            </div>
+
+            <div class="menu-line">
+                <label>Hora:</label>
+                <input type="time" id="inputHora">
+            </div>
+
+            <label style="margin-top: 20px;">Explique brevemente o assunto:</label>
+            <textarea class="menu-textarea" id="inputAssunto"></textarea>
+
+            <div class="menu-buttons">
+                <span class="cancel-btn" id="cancel1">✗</span>
+                <span class="ok-btn" id="ok1">✓</span>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="tela-menu2" class="menu-overlay">
+        <div class="menu-box">
+
+            <h2>Inatel</h2>
+            <h3>Requisitar encontro no Mind++</h3>
+
+            <p>Note que você ainda terá que fornecer qualquer documento necessário para a SAE, então você está
+                simplesmente dando início ao requerimento.</p>
+            <label style="margin-top: 20px;">Explique brevemente o assunto:</label>
+            <textarea class="menu-textarea" id="inputAssunto2"></textarea>
+
+            <div class="menu-buttons">
+                <span class="cancel-btn" id="cancel2">✗</span>
+                <span class="ok-btn" id="ok2">✓</span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="inner-container1">
+            <div class="header-title">Inatel</div>
+            <div class="welcome">Bom dia, <span id="nomeAluno">[nome do aluno]</span>!</div>
+        </div>
+        <!-- MENU LATERAL -->
+        <div class="inner-container2">
+            <div class="menu-left">
+                <div class="show-hide-div">
+                    <div class="show-hide-inner-div">
+                        <a id="showAjudas">Ver auxílios presentes</a>
+                        <a id="hideAjudas">Esconder auxílios</a>
+                    </div>
+                    <svg class="eye-icon" id="toggleEye" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+
+                        <g id="eye-closed">
+
+                            <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z" />
+                            <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" d="M3 3l18 18" />
+                            <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2" />
+                        </g>
+
+                        <g id="eye-open" style="display:none;">
+                            <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z" />
+                            <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2" />
+                        </g>
+                    </svg>
+                </div>
+                <span class="logout">Sair</span>
+            </div>
+
+
+            <div class="menu-right">
+                <!-- QUADRO CINZA -->
+                <div class="placeholder-box"></div>
+
+                <!-- AREA DE AJUDAS -->
+                <div id="ajudas-container">
+
+                    <div class="ajuda-section-title">
+                        Bolsas Presentes:
+                        <svg class="plus-icon" id="adicionarBolsa" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 5v14M5 12h14" />
+                        </svg>
+                    </div>
+
+                    <div id="bolsas">
+
+                    </div>
+
+                    <div class="ajuda-section-title">Encontros marcados no Mind++:
+                        <svg class="plus-icon" id="adicionarEmocional" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 5v14M5 12h14" />
+                        </svg>
+                    </div>
+
+                    <div id="encontros">
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="mainAjudas.js"></script>
+
+</body>
+
+</html>

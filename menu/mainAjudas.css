@@ -1,0 +1,339 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e5e5e5;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100vw;          /* ocupa exatamente a largura da tela */
+    max-width: 100vw;      /* nunca passa da largura da tela */
+    min-height: 100vh;     /* sempre ocupa a tela inteira */
+    
+    background: white;
+    border: 2px solid #ddd;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    box-sizing: border-box;  /* evita overflow por causa do padding */
+}
+.inner-container2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    /* IMPORTANTES PARA ALTURA */
+    height: 100%;        /* tenta ocupar 100% da altura disponível */
+    max-height: 100%;    /* nunca ultrapassa o container */
+    flex-grow: 1;        /* cresce para preencher espaço vertical */
+    flex-shrink: 1;      /* pode reduzir se faltar espaço */
+    overflow: auto;      /* impede overflow vertical sem cortar conteúdo */
+
+    align-items: flex-start;
+    gap: 20px;
+    box-sizing: border-box;
+}
+.show-hide-div {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+}
+.show-hide-inner-div {
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px;
+}
+
+/* MENU */
+.menu-left {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    /* Faz o menu ocupar somente o espaço necessário */
+    width: fit-content;
+    align-self: flex-start; 
+    flex-shrink: 0; 
+}
+.menu-left a {
+    text-decoration: none;
+    color: #1a73e8;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.menu-right {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    width: 100%;    
+    max-width: 100%;
+    height: 100%;  
+    max-height: 100%; 
+    overflow-y: auto;
+}
+
+.logout {
+    margin-top: 25px;
+    color: #1a73e8;
+    cursor: pointer;
+}
+
+/* TÍTULO E TEXTO */
+.header-title {
+    font-size: 1.6rem;
+    color: #1a73e8;
+    margin-bottom: 5px;
+}
+
+.welcome {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* ÍCONES */
+.eye-icon {
+    width: 22px;
+    color: #4a4a4a;   /* define cor do stroke */
+}
+.plus-icon {
+    width: 18px;
+    cursor: pointer;
+    vertical-align: middle;
+    color: #4a4a4a;
+}
+.trash-icon {
+    width: 18px;
+    cursor: pointer;
+    vertical-align: middle;
+    color: #ff4242;   /* define cor do stroke */
+}
+
+/* QUADRO CINZA */
+.placeholder-box {
+    width: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: 100%;
+    max-height: 100%;
+    background: #ddd;
+    border-radius: 4px;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+/* ÁREA DE AJUDAS */
+#ajudas-container {
+    display: none;
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: 100%;
+    max-height: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fafafa;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.ajuda-section-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+
+
+/* Overlay fixo na tela */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Caixa principal */
+.menu-box {
+    width: 90%;
+    max-width: 480px;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+/* Títulos */
+.menu-box h2 {
+    text-align: center;
+    color: #1f70d8;
+    margin-bottom: 10px;
+}
+
+.menu-box h3 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Linhas com label + input */
+.menu-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.menu-line label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Inputs padrão */
+.menu-line input {
+    width: 180px;
+    padding: 6px 8px;
+    font-size: 14px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+}
+
+/* Área de texto maior */
+.menu-textarea {
+    width: 100%;
+    height: 120px;
+    margin-top: 6px;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    resize: none;
+}
+
+/* Botões de concluir/cancelar */
+.menu-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.cancel-btn {
+    color: #d33;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.ok-btn {
+    color: #1f90e0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+
+    body {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        width: 95%;
+        padding: 20px;
+        border-width: 1px;
+        gap: 20px;
+
+        /* Tudo em coluna */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .inner-container2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 25px;
+    flex-grow: 1;
+    min-height: 0;
+    }
+
+    /* MENU ESQUERDO → vira bloco único */
+    .menu-left {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    /* Links ficam empilhados */
+    .show-hide-inner-div {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    /* Ícone de olho alinhado à direita igual à imagem */
+    .show-hide-div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .eye-icon {
+        width: 26px;
+    }
+
+    .logout {
+        display: none;
+    }
+
+    /* DIREITA FICA EM COLUNA TAMBÉM */
+    .menu-right {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Caixa cinza reduzida */
+    .placeholder-box {
+        flex: 1;
+        min-height: 0;
+    }
+
+    /* Área de ajudas igual à caixa cinza */
+    #ajudas-container {
+        flex: 1;
+        min-height: 0;
+        padding: 15px;
+    }
+
+    /* Texto menor para combinar com mobile */
+    .header-title {
+        font-size: 1.4rem;
+    }
+
+    .welcome {
+        margin-bottom: 5px;
+    }
+
+    .ajuda-section-title {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-size: 0.95rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        margin: 4px 0;
+    }
+}

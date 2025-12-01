@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    background: #e3e3e3;
+    font-family: Arial, sans-serif;
+
+    /* Centralização vertical/horizontal PERFEITA no desktop e mobile */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- FUNDO --- */
+.background {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* --- CAIXA DE LOGIN (DESKTOP) --- */
+.login-box {
+    background: white;
+    width: 400px;
+    padding: 40px 20px;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.title {
+    margin: 0;
+    color: #1976d2;
+    font-size: 28px;
+}
+
+.subtitle {
+    margin-top: 5px;
+    margin-bottom: 25px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn {
+    width: 80%;
+    padding: 14px;
+    margin: 12px 0;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #1976d2; /* tom mais escuro no hover */
+}
+.primary {
+    background: #1e88e5;
+    color: white;
+}
+
+.nota-teste {
+    color: purple;
+    font-size: 12px;
+    margin-top: -5px;
+    display: block;
+}
+
+/* ------------------------------------------- */
+/* -----------   MODO CELULAR   -------------- */
+/* ------------------------------------------- */
+
+@media (max-width: 520px) {
+
+    body {
+        height: auto;                /* evita bug de corte vertical */
+        padding: 30px 0;             /* espaço top/bottom */
+        align-items: flex-start;     /* posiciona o card igual ao mockup */
+    }
+
+    .login-box {
+        width: 90%;
+        max-width: 350px;
+        padding: 35px 20px;          /* mais próximo do mockup */
+    }
+
+    .title {
+        font-size: 30px;             /* igual ao mockup mobile */
+    }
+
+    .subtitle {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        width: 85%;                  /* botões mais largos */
+        padding: 12px 0;             /* botões maiores */
+        font-size: 15px;
+        margin: 15px auto;           /* mais espaçamento */
+        border-radius: 8px;
+    }
+
+    .nota-teste {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+}
