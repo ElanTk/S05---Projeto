@@ -2,22 +2,18 @@ body {
     margin: 0;
     background: #e3e3e3;
     font-family: Arial, sans-serif;
-
-    /* Centralização vertical/horizontal PERFEITA no desktop e mobile */
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* --- FUNDO --- */
 .background {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-/* --- CAIXA DE LOGIN (DESKTOP) --- */
 .login-box {
     background: white;
     width: 400px;
@@ -54,8 +50,9 @@ body {
 }
 
 .btn:hover {
-    background-color: #1976d2; /* tom mais escuro no hover */
+    background-color: #1976d2;
 }
+
 .primary {
     background: #1e88e5;
     color: white;
@@ -68,26 +65,22 @@ body {
     display: block;
 }
 
-/* ------------------------------------------- */
-/* -----------   MODO CELULAR   -------------- */
-/* ------------------------------------------- */
-
+/* MOBILE */
 @media (max-width: 520px) {
-
     body {
-        height: auto;                /* evita bug de corte vertical */
-        padding: 30px 0;             /* espaço top/bottom */
-        align-items: flex-start;     /* posiciona o card igual ao mockup */
+        height: auto;
+        padding: 30px 0;
+        align-items: flex-start;
     }
 
     .login-box {
         width: 90%;
         max-width: 350px;
-        padding: 35px 20px;          /* mais próximo do mockup */
+        padding: 35px 20px;
     }
 
     .title {
-        font-size: 30px;             /* igual ao mockup mobile */
+        font-size: 30px;
     }
 
     .subtitle {
@@ -96,10 +89,10 @@ body {
     }
 
     .btn {
-        width: 85%;                  /* botões mais largos */
-        padding: 12px 0;             /* botões maiores */
+        width: 85%;
+        padding: 12px 0;
         font-size: 15px;
-        margin: 15px auto;           /* mais espaçamento */
+        margin: 15px auto;
         border-radius: 8px;
     }
 

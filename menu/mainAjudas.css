@@ -7,57 +7,53 @@ body {
 }
 
 .container {
-    width: 100vw;          /* ocupa exatamente a largura da tela */
-    max-width: 100vw;      /* nunca passa da largura da tela */
-    min-height: 100vh;     /* sempre ocupa a tela inteira */
-    
+    width: 100vw;
+    max-width: 100vw;
+    min-height: 100vh;
     background: white;
     border: 2px solid #ddd;
     padding: 30px;
-
     display: flex;
     flex-direction: column;
     gap: 30px;
-    box-sizing: border-box;  /* evita overflow por causa do padding */
+    box-sizing: border-box;
 }
+
 .inner-container2 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
-    /* IMPORTANTES PARA ALTURA */
-    height: 100%;        /* tenta ocupar 100% da altura disponível */
-    max-height: 100%;    /* nunca ultrapassa o container */
-    flex-grow: 1;        /* cresce para preencher espaço vertical */
-    flex-shrink: 1;      /* pode reduzir se faltar espaço */
-    overflow: auto;      /* impede overflow vertical sem cortar conteúdo */
-
+    height: 100%;
+    max-height: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: auto;
     align-items: flex-start;
     gap: 20px;
     box-sizing: border-box;
 }
+
 .show-hide-div {
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: space-between;
 }
+
 .show-hide-inner-div {
-    display: flex; 
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
     gap: 8px;
 }
 
-/* MENU */
 .menu-left {
     display: flex;
     flex-direction: column;
     gap: 18px;
-
-    /* Faz o menu ocupar somente o espaço necessário */
     width: fit-content;
-    align-self: flex-start; 
-    flex-shrink: 0; 
+    align-self: flex-start;
+    flex-shrink: 0;
 }
+
 .menu-left a {
     text-decoration: none;
     color: #1a73e8;
@@ -69,10 +65,10 @@ body {
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 0;
-    width: 100%;    
+    width: 100%;
     max-width: 100%;
-    height: 100%;  
-    max-height: 100%; 
+    height: 100%;
+    max-height: 100%;
     overflow-y: auto;
 }
 
@@ -82,7 +78,6 @@ body {
     cursor: pointer;
 }
 
-/* TÍTULO E TEXTO */
 .header-title {
     font-size: 1.6rem;
     color: #1a73e8;
@@ -97,19 +92,21 @@ body {
 /* ÍCONES */
 .eye-icon {
     width: 22px;
-    color: #4a4a4a;   /* define cor do stroke */
+    color: #4a4a4a;
 }
+
 .plus-icon {
     width: 18px;
     cursor: pointer;
     vertical-align: middle;
     color: #4a4a4a;
 }
+
 .trash-icon {
     width: 18px;
     cursor: pointer;
     vertical-align: middle;
-    color: #ff4242;   /* define cor do stroke */
+    color: #ff4242;
 }
 
 /* QUADRO CINZA */
@@ -145,9 +142,7 @@ body {
     margin-bottom: 8px;
 }
 
-
-
-/* Overlay fixo na tela */
+/* class dos popups */
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -197,7 +192,6 @@ body {
     font-weight: bold;
 }
 
-/* Inputs padrão */
 .menu-line input {
     width: 180px;
     padding: 6px 8px;
@@ -206,7 +200,6 @@ body {
     border-radius: 4px;
 }
 
-/* Área de texto maior */
 .menu-textarea {
     width: 100%;
     height: 120px;
@@ -240,7 +233,6 @@ body {
 
 /* MOBILE */
 @media (max-width: 700px) {
-
     body {
         padding: 0;
         margin: 0;
@@ -253,22 +245,19 @@ body {
         padding: 20px;
         border-width: 1px;
         gap: 20px;
-
-        /* Tudo em coluna */
         display: flex;
         flex-direction: column;
     }
 
     .inner-container2 {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 25px;
-    flex-grow: 1;
-    min-height: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 25px;
+        flex-grow: 1;
+        min-height: 0;
     }
 
-    /* MENU ESQUERDO → vira bloco único */
     .menu-left {
         width: 100%;
         flex-direction: column;
@@ -276,13 +265,11 @@ body {
         align-items: flex-start;
     }
 
-    /* Links ficam empilhados */
     .show-hide-inner-div {
         flex-direction: column;
         gap: 6px;
     }
 
-    /* Ícone de olho alinhado à direita igual à imagem */
     .show-hide-div {
         width: 100%;
         display: flex;
@@ -298,26 +285,22 @@ body {
         display: none;
     }
 
-    /* DIREITA FICA EM COLUNA TAMBÉM */
     .menu-right {
         width: 100%;
         max-width: 100%;
     }
 
-    /* Caixa cinza reduzida */
     .placeholder-box {
         flex: 1;
         min-height: 0;
     }
 
-    /* Área de ajudas igual à caixa cinza */
     #ajudas-container {
         flex: 1;
         min-height: 0;
         padding: 15px;
     }
 
-    /* Texto menor para combinar com mobile */
     .header-title {
         font-size: 1.4rem;
     }

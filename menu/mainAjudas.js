@@ -3,9 +3,6 @@ const id = localStorage.getItem("matriculaLogada");
 const nome = localStorage.getItem("usuarioLogado");
 document.getElementById("nomeAluno").innerHTML = nome;
 
-console.log(id); // Verifique o valor no console
-console.log(nome); // Verifique o valor no console
-
 // caixa cinza e caixa mostrando ajudas
 const cont = document.getElementById("ajudas-container");
 const placeholder = document.querySelector(".placeholder-box");
@@ -32,16 +29,15 @@ const btnCancel2 = document.getElementById("cancel2");
 const btnOk2 = document.getElementById("ok2");
 const btnBolsa = document.getElementById("adicionarBolsa");
 const inputAssunto2 = document.getElementById("inputAssunto2");
+
 //Ainda faz parte da lógica, mas é onde as bolsas aparecem
 const divBolsas = document.getElementById("bolsas");
 const divEncontros = document.getElementById("encontros");
-
 
 // Mostrar ajudas
 document.getElementById("showAjudas").onclick = () => {
     cont.style.display = "block";
     placeholder.style.display = "none";
-
     eyeOpen.style.display = "block";
     eyeClosed.style.display = "none";
 };
@@ -50,23 +46,20 @@ document.getElementById("showAjudas").onclick = () => {
 document.getElementById("hideAjudas").onclick = () => {
     cont.style.display = "none";
     placeholder.style.display = "block";
-
     eyeOpen.style.display = "none";
     eyeClosed.style.display = "block";
 };
 
-//Voltar a tela inicial
+// Voltar a tela inicial
 logoutButton.addEventListener('click', function() {
     window.location.href = '../index.html';
 });
 
-//POP-UP1
+// POP-UP1
 btnEmoc.addEventListener("click", () => {
-
     inputData.value = "";
     inputHora.value = "";
     inputAssunto.value = "";
-
     popup.style.display = "flex";
 });
 
@@ -74,7 +67,6 @@ btnCancel.addEventListener("click", () => {
     popup.style.display = "none";
 });
 
-// Botão OK adiciona o compromisso
 btnOk.addEventListener("click", () => {
     const data = inputData.value;
     const hora = inputHora.value;
@@ -103,26 +95,20 @@ btnOk.addEventListener("click", () => {
     localStorage.setItem("compromissos", JSON.stringify(compromissos));
 
     alert("Compromisso adicionado com sucesso!");
-
     popup.style.display = "none";
     renderCompromissos();
 });
 
-// ABRIR POP-UP2
+// POP-UP2
 btnBolsa.addEventListener("click", () => {
-
-    // Limpa campos
     inputAssunto2.value = "";
-
-    // Exibe popup
     popup2.style.display = "flex";
 });
-// FECHAR POP-UP2
+
 btnCancel2.addEventListener("click", () => {
     popup2.style.display = "none";
 });
 
-// Botão OK adiciona a bolsa
 btnOk2.addEventListener("click", () => {
     const assunto = inputAssunto2.value.trim();
 
@@ -143,21 +129,17 @@ btnOk2.addEventListener("click", () => {
     };
 
     localStorage.setItem("bolsa", JSON.stringify(bolsa));
-
     alert("Bolsa registrada com sucesso!");
-
     popup2.style.display = "none";
     renderBolsa();
 });
 
-
+//Esses dois renderizam a bolsa se tiver e os compromissos.
 function renderBolsa() {
     divBolsas.innerHTML = "";
-
     const bolsa = JSON.parse(localStorage.getItem("bolsa"));
-    if (!bolsa) return; 
+    if (!bolsa) return;
 
-    // Cria o elemento <p>
     const p = document.createElement("p");
     p.innerHTML = `
         ${bolsa.nome} | ${bolsa.status}
@@ -167,7 +149,6 @@ function renderBolsa() {
                 d="M6 18L18 6M6 6l12 12" />
         </svg>
     `;
-
     divBolsas.appendChild(p);
 
     const trashIcon = p.querySelector(".trash-icon");
@@ -179,9 +160,7 @@ function renderBolsa() {
 }
 
 function renderCompromissos() {
-    // Limpa a div antes de adicionar (evita duplicações)
     divEncontros.innerHTML = "";
-
     const compromissos = JSON.parse(localStorage.getItem("compromissos")) || [];
 
     compromissos.forEach((comp, index) => {
@@ -206,10 +185,7 @@ function renderCompromissos() {
     });
 }
 
-// Chama os renders ao carregar
 document.addEventListener("DOMContentLoaded", renderCompromissos);
 document.addEventListener("DOMContentLoaded", renderBolsa);
-
-// Pop-ups começam invisíveis
 popup.style.display = "none";
 popup2.style.display = "none";
