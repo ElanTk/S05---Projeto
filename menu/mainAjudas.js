@@ -48,33 +48,39 @@ class PopupEncontro {
     }
 
     abrirEventos() {
-        document.getElementById("adicionarEmocional").addEventListener("click", () => this.abrir());
-        this.btnCancel.addEventListener("click", () => this.fechar());
+    document.getElementById("adicionarEmocional").addEventListener("click", () => this.abrir());
+    this.btnCancel.addEventListener("click", () => this.fechar());
 
-        this.btnOk.addEventListener("click", () => {
-            const data = this.inputData.value;
-            const hora = this.inputHora.value;
-            const assunto = this.inputAssunto.value.trim();
+    this.btnOk.addEventListener("click", () => {
+        const data = this.inputData.value;
+        const hora = this.inputHora.value;
+        const assunto = this.inputAssunto.value.trim();
 
-            if (!assunto) return alert("O assunto não pode estar vazio!");
+        if (!assunto) return alert("O assunto não pode estar vazio!");
 
-            const hoje = new Date();
-            const dataSelecionada = new Date(data + "T00:00");
+        const hoje = new Date();
+        const dataSelecionada = new Date(data + "T00:00");
 
-            if (dataSelecionada <= hoje) return alert("A data precisa ser depois da data atual!");
+        if (dataSelecionada <= hoje) return alert("A data precisa ser depois da data atual!");
 
-            const [h] = hora.split(":").map(Number);
-            if (h < 8 || h > 18) return alert("A hora precisa estar entre 08:00 e 18:00!");
+        const [h] = hora.split(":").map(Number);
+        if (h < 8 || h > 18) return alert("A hora precisa estar entre 08:00 e 18:00!");
 
-            let compromissos = JSON.parse(localStorage.getItem("compromissos")) || [];
-            compromissos.push(new Compromisso(data, hora, assunto));
-            localStorage.setItem("compromissos", JSON.stringify(compromissos));
+        let compromissos = JSON.parse(localStorage.getItem("compromissos")) || [];
 
-            alert("Compromisso adicionado com sucesso!");
-            this.fechar();
-            RenderizadorAjudas.renderCompromissos();
-        });
-    }
+        const existe = compromissos.some(c => c.data === data);
+        if (existe) {
+            return alert("Você já possui um compromisso marcado neste dia!");
+        }
+
+        compromissos.push(new Compromisso(data, hora, assunto));
+        localStorage.setItem("compromissos", JSON.stringify(compromissos));
+
+        alert("Compromisso adicionado com sucesso!");
+        this.fechar();
+        RenderizadorAjudas.renderCompromissos();
+    });
+}
 
     abrir() {
         this.inputData.value = "";
